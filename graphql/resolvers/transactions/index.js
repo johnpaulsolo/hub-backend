@@ -1,0 +1,61 @@
+const Transaction = require('../../../models/Transactions/index');
+
+module.exports={
+    CreateTransaction: (args) => {
+
+        const {
+            UserId,
+            DropAddress,
+            PickAddress,
+            DropLat,
+            DropLong,
+            PickLat,
+            PickLong,
+            HubLocated,
+            Notes
+        } = args.newTransaction
+
+        const newTransaction = new Transaction({
+            UserId: UserId,
+            DropAddress: DropAddress,
+            PickAddress: PickAddress,
+            DropLat: DropLat,
+            DropLong: DropLong,
+            PickLat: PickLat,
+            PickLong: PickLong,
+            HubLocated: HubLocated,
+            Notes: Notes
+        });
+
+        return newTransaction
+            .save().then(result => {
+                return { 
+                    ...result._doc
+                }
+            }).catch(err => {
+                throw err;
+            });
+    },
+    AllTransactions: (args) => {
+        
+        return Transaction.find()
+            .then(result => {
+                return {
+                    ...result._doc
+                }
+            }).catch(err => {
+                throw err;
+            });
+    },
+    Transaction: (args) => {
+
+        return Transaction.findById(args.Hub)
+            .then(result => {
+                return {
+                    ...result._doc
+                }
+            }).catch(err => {
+                throw err;
+            });
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "tricycledb",
+  "version": "1.0.0",
+  "description": "graphql for backend api",
+  "main": "app.js",
+  "engines": {
+    "node": "10.16.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "build": "npm install",
+    "dev": "nodemon app.js"
+  },
+  "author": "John Paul Solo",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.7.0",
+    "graphql-import": "^0.7.1",
+    "jsonwebtoken": "^8.5.0",
+    "mongoose": "^5.4.11",
+    "nodemon": "^1.18.10"
+  }
+}
