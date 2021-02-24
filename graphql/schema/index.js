@@ -25,10 +25,10 @@ module.exports = buildSchema(`
         UserId: Users!
         DropAddress: String!
         PickAddress: String!
-        DropLat: Int!
-        DropLong: Int!
-        PickLat: Int!
-        PickLong: Int!
+        DropLat: Float!
+        DropLong: Float!
+        PickLat: Float!
+        PickLong: Float!
         HubLocated: String!
         Notes: String!
     }
@@ -46,10 +46,10 @@ module.exports = buildSchema(`
         UserId: String!
         DropAddress: String!
         PickAddress: String!
-        DropLat: Int!
-        DropLong: Int!
-        PickLat: Int!
-        PickLong: Int!
+        DropLat: Float!
+        DropLong: Float!
+        PickLat: Float!
+        PickLong: Float!
         HubLocated: String!
         Notes: String!
     }
