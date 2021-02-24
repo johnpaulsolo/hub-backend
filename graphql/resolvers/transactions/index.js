@@ -1,4 +1,5 @@
 const Transaction = require('../../../models/Transactions/index');
+const { userRelation } = require('../merge/index');
 
 module.exports={
     CreateTransaction: (args) => {
@@ -40,9 +41,12 @@ module.exports={
         
         return Transaction.find()
             .then(result => {
-                return {
-                    ...result._doc
-                }
+                return result.map(Data => {
+                    return {
+                        ...Data._doc,
+                        UserId: userRelation.bind(this, Data._doc.UserId)
+                    }
+                })
             }).catch(err => {
                 throw err;
             });
