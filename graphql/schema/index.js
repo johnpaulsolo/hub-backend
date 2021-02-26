@@ -66,6 +66,7 @@ module.exports = buildSchema(`
     type AllMutations {
         CreateAccount(newAccount: CreateAccount): Users
         CreateTransaction(newTransaction: CreateTransaction): Transaction
+        EditStatus(account: String, status: String): Transaction
     }
 
     schema {

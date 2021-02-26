@@ -61,5 +61,18 @@ module.exports={
             }).catch(err => {
                 throw err;
             });
+    },
+    EditStatus: (args) => {
+
+        return Transaction.findByIdAndUpdate(args.account, {
+                Status: args.status
+            })
+            .then(result => {
+                return {
+                    ...result._doc
+                }
+            }).catch(err => {
+                throw err;
+            });
     }
 }
