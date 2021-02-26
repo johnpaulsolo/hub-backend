@@ -31,6 +31,7 @@ module.exports = buildSchema(`
         PickLong: Float!
         HubLocated: String!
         Notes: String!
+        Status: String!
     }
 
     input CreateAccount {
@@ -52,6 +53,7 @@ module.exports = buildSchema(`
         PickLong: Float!
         HubLocated: String!
         Notes: String!
+        Status: String!
     }
 
     type AllQueries {

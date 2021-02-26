@@ -30,6 +30,9 @@ const TransactionSchema = new Schema({
     },
     Notes: {
         type: String
+    },
+    Status: {
+        type: String
     }
 })
 
