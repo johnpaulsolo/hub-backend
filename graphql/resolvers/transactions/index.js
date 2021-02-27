@@ -13,7 +13,8 @@ module.exports={
             PickLat,
             PickLong,
             HubLocated,
-            Notes
+            Notes,
+            Status
         } = args.newTransaction
 
         const newTransaction = new Transaction({
@@ -25,7 +26,8 @@ module.exports={
             PickLat: PickLat,
             PickLong: PickLong,
             HubLocated: HubLocated,
-            Notes: Notes
+            Notes: Notes,
+            Status: Status
         });
 
         return newTransaction
