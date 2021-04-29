@@ -34,6 +34,13 @@ module.exports = buildSchema(`
         Status: String!
     }
 
+    type Decals {
+        _id: ID!
+        Pic1: String!
+        Pic2: String!
+        Date: String!
+    }
+
     input CreateAccount {
         Username: String!
         Email: String!
@@ -56,6 +63,13 @@ module.exports = buildSchema(`
         Status: String!
     }
 
+    input CreateDecalUpdate {
+        UserId: String!
+        Pic1: String!
+        Pic2: String!
+        Date: String!
+    }
+
     type AllQueries {
         login(Username: String, Password: String): AuthData!
         Transaction(Hub: String): Transaction
@@ -67,6 +81,7 @@ module.exports = buildSchema(`
         CreateAccount(newAccount: CreateAccount): Users
         CreateTransaction(newTransaction: CreateTransaction): Transaction
         EditStatus(account: String, status: String): Transaction
+        SendDecals(newDecal: CreateDecalUpdate): Decals
     }
 
     schema {
