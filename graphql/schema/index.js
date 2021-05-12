@@ -75,6 +75,7 @@ module.exports = buildSchema(`
         Transaction(Hub: String): Transaction
         AllTransactions: [Transaction!]!
         Profile(userId: String): Users
+        AllDecals: [Decals!]!
     }
     
     type AllMutations {
