@@ -30,6 +30,10 @@ const UsersSchema = new Schema({
     },
     Image: {
         type: String
+    },
+    Phone: {
+        type: String,
+        required: true
     }
 });
 

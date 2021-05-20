@@ -9,7 +9,8 @@ module.exports={
             FName,
             LName,
             Password,
-            UserType
+            UserType,
+            Phone
         } = args.newAccount
 
         const newAccount = new User({
@@ -18,6 +19,7 @@ module.exports={
             FName: FName,
             LName: LName,
             Password: Password,
+            Phone: Phone,
             UserType: UserType
         });
 

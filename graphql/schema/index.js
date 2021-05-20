@@ -11,6 +11,7 @@ module.exports = buildSchema(`
         Password: String!
         UserType: String!
         Image: String
+        Phone: String!
     }
 
     type AuthData {
@@ -48,6 +49,7 @@ module.exports = buildSchema(`
         LName: String!
         Password: String!
         UserType: String!
+        Phone: String!
     }
 
     input CreateTransaction {
