@@ -33,6 +33,10 @@ const TransactionSchema = new Schema({
     },
     Status: {
         type: String
+    },
+    Driver: {
+        type: Schema.Types.ObjectId,
+        ref: 'Users',
     }
 })
 

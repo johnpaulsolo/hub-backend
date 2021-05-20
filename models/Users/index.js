@@ -34,6 +34,12 @@ const UsersSchema = new Schema({
     Phone: {
         type: String,
         required: true
+    },
+    Vehicle: {
+        type: String
+    },
+    PlateNo: {
+        type: String
     }
 });
 

@@ -12,6 +12,8 @@ module.exports = buildSchema(`
         UserType: String!
         Image: String
         Phone: String!
+        Vehicle: String
+        PlateNo: String
     }
 
     type AuthData {
@@ -33,6 +35,7 @@ module.exports = buildSchema(`
         HubLocated: String!
         Notes: String!
         Status: String!
+        Driver: String
     }
 
     type Decals {
@@ -85,7 +88,7 @@ module.exports = buildSchema(`
     type AllMutations {
         CreateAccount(newAccount: CreateAccount): Users
         CreateTransaction(newTransaction: CreateTransaction): Transaction
-        EditStatus(account: String, status: String): Transaction
+        EditStatus(account: String, status: String, rider: String): Transaction
         SendDecals(newDecal: CreateDecalUpdate): Decals
     }
 

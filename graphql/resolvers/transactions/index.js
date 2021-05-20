@@ -89,11 +89,13 @@ module.exports={
     EditStatus: (args) => {
 
         return Transaction.findByIdAndUpdate(args.account, {
-                Status: args.status
+                Status: args.status,
+                Driver: args.rider
             })
             .then(result => {
                 return {
-                    ...result._doc
+                    ...result._doc,
+                    Driver: userRelation.bind(this, ...result._doc.Driver)
                 }
             }).catch(err => {
                 throw err;
