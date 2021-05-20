@@ -64,6 +64,17 @@ module.exports={
                 throw err;
             });
     },
+    UserPendingTransactions: (args) => {
+        
+        return Transaction.find({ _id: args.User, Status: "Pending"})
+            .then(result => {
+                return {
+                    ...result._doc
+                }
+            }).catch(err => {
+                throw err;
+            });
+    },
     EditStatus: (args) => {
 
         return Transaction.findByIdAndUpdate(args.account, {

@@ -76,6 +76,7 @@ module.exports = buildSchema(`
         login(Username: String, Password: String): AuthData!
         Transaction(Hub: String): Transaction
         AllTransactions: [Transaction!]!
+        UserPendingTransactions(User: String): Transaction
         Profile(userId: String): Users
         AllDecals: [Decals!]!
     }
