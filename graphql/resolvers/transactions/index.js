@@ -75,6 +75,17 @@ module.exports={
                 throw err;
             });
     },
+    Searching: (args) => {
+
+        return Transaction.findOne({ _id: args.TripId})
+            .then(result => {
+                return {
+                    ...result._doc
+                }
+            }).catch(err => {
+                throw err;
+            });
+    },
     EditStatus: (args) => {
 
         return Transaction.findByIdAndUpdate(args.account, {
