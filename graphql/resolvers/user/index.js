@@ -10,7 +10,9 @@ module.exports={
             LName,
             Password,
             UserType,
-            Phone
+            Phone,
+            Vehicle,
+            PlateNo
         } = args.newAccount
 
         const newAccount = new User({
@@ -20,7 +22,9 @@ module.exports={
             LName: LName,
             Password: Password,
             Phone: Phone,
-            UserType: UserType
+            UserType: UserType,
+            Vehicle: Vehicle,
+            PlateNo: PlateNo
         });
 
         return newAccount

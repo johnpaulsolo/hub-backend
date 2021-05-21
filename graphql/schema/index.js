@@ -53,6 +53,8 @@ module.exports = buildSchema(`
         Password: String!
         UserType: String!
         Phone: String!
+        Vehicle: String
+        PlateNo: String
     }
 
     input CreateTransaction {
