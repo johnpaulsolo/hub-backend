@@ -12,7 +12,8 @@ module.exports={
             UserType,
             Phone,
             Vehicle,
-            PlateNo
+            PlateNo,
+            Decals
         } = args.newAccount
 
         const newAccount = new User({
@@ -24,7 +25,8 @@ module.exports={
             Phone: Phone,
             UserType: UserType,
             Vehicle: Vehicle,
-            PlateNo: PlateNo
+            PlateNo: PlateNo,
+            Decals: Decals
         });
 
         return newAccount

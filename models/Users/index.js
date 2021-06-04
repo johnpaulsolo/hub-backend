@@ -40,6 +40,9 @@ const UsersSchema = new Schema({
     },
     PlateNo: {
         type: String
+    },
+    Decals: {
+        type: String
     }
 });
 
