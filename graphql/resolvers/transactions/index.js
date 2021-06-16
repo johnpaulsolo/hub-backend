@@ -47,7 +47,7 @@ module.exports={
                     return {
                         ...Data._doc,
                         UserId: userRelation.bind(this, Data._doc.UserId),
-                        Driver: userRelation.bind(this, ...result._doc.Driver)
+                        Driver: userRelation.bind(this, Data._doc.Driver)
                     }
                 })
             }).catch(err => {
