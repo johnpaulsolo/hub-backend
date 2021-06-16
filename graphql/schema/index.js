@@ -36,7 +36,7 @@ module.exports = buildSchema(`
         HubLocated: String!
         Notes: String!
         Status: String!
-        Driver: String
+        Driver: Users
     }
 
     type Decals {
