@@ -46,7 +46,8 @@ module.exports={
                 return result.map(Data => {
                     return {
                         ...Data._doc,
-                        UserId: userRelation.bind(this, Data._doc.UserId)
+                        UserId: userRelation.bind(this, Data._doc.UserId),
+                        Driver: userRelation.bind(this, ...result._doc.Driver)
                     }
                 })
             }).catch(err => {
@@ -58,7 +59,8 @@ module.exports={
         return Transaction.findById(args.Hub)
             .then(result => {
                 return {
-                    ...result._doc
+                    ...result._doc,
+                    Driver: userRelation.bind(this, ...result._doc.Driver)
                 }
             }).catch(err => {
                 throw err;
