@@ -89,15 +89,21 @@ module.exports={
             });
     },
     EditStatus: (args) => {
-
-        return Transaction.findByIdAndUpdate(args.account, {
-                Status: args.status,
-                Driver: args.rider
-            })
+        return Transaction.findOne({ _id: args.account })
             .then(result => {
-                return {
-                    ...result._doc,
-                    Driver: userRelation.bind(this, ...result._doc.Driver)
+                if (result._doc.Driver == null || result._doc.Driver == args.rider) {
+                    return Transaction.findByIdAndUpdate(args.account, {
+                            Status: args.status,
+                            Driver: args.rider
+                        })
+                        .then(data => {
+                            return {
+                                ...data._doc,
+                                Driver: userRelation.bind(this, data._doc.Driver)
+                            }
+                        }).catch(err => {
+                            throw err;
+                        });
                 }
             }).catch(err => {
                 throw err;
