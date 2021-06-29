@@ -66,6 +66,20 @@ module.exports={
                 throw err;
             });
     },
+    ProfileTransaction: (args) => {
+        return Transaction.find({ UserId: args.User })
+            .then(result => {
+                return result.map(Data => {
+                    return {
+                        ...Data._doc,
+                        UserId: userRelation.bind(this, Data._doc.UserId),
+                        Driver: userRelation.bind(this, Data._doc.Driver)
+                    }
+                })
+            }).catch(err => {
+                throw err;
+            });
+    },
     UserPendingTransactions: (args) => {
         
         return Transaction.findOne({ UserId: { _id: args.User }, Status: "Pending"})
