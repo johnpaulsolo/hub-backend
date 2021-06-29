@@ -5,7 +5,7 @@ const isAuth = require("./middleware/is-Auth");
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 3022;
+const port = process.env.PORT || 3055;
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -17,7 +17,8 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 app.use(isAuth);
 
