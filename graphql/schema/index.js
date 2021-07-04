@@ -85,6 +85,7 @@ module.exports = buildSchema(`
         AllTransactions: [Transaction!]!
         ProfileTransaction(User: String): [Transaction!]!
         UserPendingTransactions(User: String): Transaction
+        UserAcceptedTransactions(User: String): Transaction
         Searching(TripId: String): Transaction
         Profile(userId: String): Users
         AllDecals: [Decals!]!

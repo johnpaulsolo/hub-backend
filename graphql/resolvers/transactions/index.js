@@ -82,7 +82,18 @@ module.exports={
     },
     UserPendingTransactions: (args) => {
         
-        return Transaction.findOne({ UserId: { _id: args.User }, Status: "Pending"})
+        return Transaction.findOne({ UserId: { _id: args.User }, Status: "Pending" })
+            .then(result => {
+                return {
+                    ...result._doc
+                }
+            }).catch(err => {
+                throw err;
+            });
+    },
+    UserAcceptedTransactions: (args) => {
+        
+        return Transaction.findOne({ UserId: { _id: args.User }, Status: "Accepted" })
             .then(result => {
                 return {
                     ...result._doc
