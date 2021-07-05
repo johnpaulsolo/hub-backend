@@ -96,7 +96,8 @@ module.exports={
         return Transaction.findOne({ UserId: { _id: args.User }, Status: "Accepted" })
             .then(result => {
                 return {
-                    ...result._doc
+                    ...result._doc,
+                    Driver: userRelation.bind(this, result._doc.Driver)
                 }
             }).catch(err => {
                 throw err;
