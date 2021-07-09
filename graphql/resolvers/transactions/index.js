@@ -82,7 +82,7 @@ module.exports={
     },
     DriverTrip: (args) => {
 
-        return Transaction.findOne({ Driver: { _id: args.userId }, Status: { $in: ["Accepted", "Pending"] } })
+        return Transaction.findOne({ Driver: { _id: args.userId }, Status: "Accepted" })
             .then(result => {
                 return {
                     ...result._doc
