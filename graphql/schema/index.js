@@ -36,6 +36,7 @@ module.exports = buildSchema(`
         HubLocated: String!
         Notes: String!
         Status: String
+        Rate: String
         Driver: Users
     }
 
