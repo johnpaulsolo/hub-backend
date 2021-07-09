@@ -66,6 +66,16 @@ module.exports={
                 throw err;
             });
     },
+    DriverTrip: (args) => {
+        return Transaction.findOne({ Driver: { _id: args.userId }, Status: { $in: ["Accepted", "Pending"] } })
+            .then(result => {
+                return {
+                    ...result._doc
+                }
+            }).catch(err => {
+                throw err;
+            })
+    },
     ProfileTransaction: (args) => {
         return Transaction.find({ UserId: args.User })
             .then(result => {

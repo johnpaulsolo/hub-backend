@@ -35,7 +35,7 @@ module.exports = buildSchema(`
         PickLong: Float!
         HubLocated: String!
         Notes: String!
-        Status: String!
+        Status: String
         Driver: Users
     }
 
@@ -82,6 +82,7 @@ module.exports = buildSchema(`
     type AllQueries {
         login(Username: String, Password: String): AuthData!
         Transaction(Hub: String): Transaction
+        DriverTrip(userId: String): Transaction
         AllTransactions: [Transaction!]!
         ProfileTransaction(User: String): [Transaction!]!
         UserPendingTransactions(User: String): Transaction
