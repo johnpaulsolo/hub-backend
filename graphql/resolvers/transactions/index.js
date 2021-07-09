@@ -114,11 +114,11 @@ module.exports={
             });
     },
     Searching: (args) => {
-
         return Transaction.findOne({ _id: args.TripId})
             .then(result => {
                 return {
-                    ...result._doc
+                    ...result._doc,
+                    Driver: userRelation.bind(this, result._doc.Driver)
                 }
             }).catch(err => {
                 throw err;
