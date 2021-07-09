@@ -85,6 +85,7 @@ module.exports = buildSchema(`
         Transaction(Hub: String): Transaction
         DriverTrip(userId: String): Transaction
         AllTransactions: [Transaction!]!
+        RequestTransactions: [Transaction!]!
         ProfileTransaction(User: String): [Transaction!]!
         UserPendingTransactions(User: String): Transaction
         UserAcceptedTransactions(User: String): Transaction

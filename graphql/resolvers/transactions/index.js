@@ -54,6 +54,20 @@ module.exports={
                 throw err;
             });
     },
+    RequestTransactions: (args) => {
+        return Transaction.find({  Status: { $in: ["Accepted", "Pending"] } })
+            .then(result => {
+                return result.map(Data => {
+                    return {
+                        ...Data._doc,
+                        UserId: userRelation.bind(this, Data._doc.UserId),
+                        Driver: userRelation.bind(this, Data._doc.Driver)
+                    }
+                })
+            }).catch(err => {
+                throw err;
+            });
+    },
     Transaction: (args) => {
 
         return Transaction.findById(args.Hub)
@@ -67,6 +81,7 @@ module.exports={
             });
     },
     DriverTrip: (args) => {
+
         return Transaction.findOne({ Driver: { _id: args.userId }, Status: { $in: ["Accepted", "Pending"] } })
             .then(result => {
                 return {
@@ -77,6 +92,7 @@ module.exports={
             })
     },
     ProfileTransaction: (args) => {
+
         return Transaction.find({ UserId: args.User })
             .then(result => {
                 return result.map(Data => {
@@ -91,6 +107,7 @@ module.exports={
             });
     },
     UserPendingTransactions: (args) => {
+
         return Transaction.findOne({ UserId: { _id: args.User }, Status: { $in: ["Accepted", "Pending"] } })
             .then(result => {
                 return {
@@ -114,6 +131,7 @@ module.exports={
             });
     },
     Searching: (args) => {
+
         return Transaction.findOne({ _id: args.TripId})
             .then(result => {
                 return {
@@ -125,6 +143,7 @@ module.exports={
             });
     },
     EditStatus: (args) => {
+
         return Transaction.findOne({ _id: args.account })
             .then(result => {
                 if (result._doc.Driver == null || result._doc.Driver == args.rider) {
