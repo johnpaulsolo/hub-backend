@@ -91,7 +91,7 @@ module.exports={
             });
     },
     UserPendingTransactions: (args) => {
-        return Transaction.findOne({ UserId: { _id: args.User }, Status: { $in: ["Accepted", "Pending"] } })
+        return Transaction.findOne({ UserId: { _id: args.User } })
             .then(result => {
                 return {
                     ...result._doc,
