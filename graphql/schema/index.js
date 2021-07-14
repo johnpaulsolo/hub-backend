@@ -15,6 +15,7 @@ module.exports = buildSchema(`
         Vehicle: String
         PlateNo: String
         Decals: String
+        Hub: String
     }
 
     type AuthData {
@@ -58,6 +59,7 @@ module.exports = buildSchema(`
         Vehicle: String
         PlateNo: String
         Decals: String
+        Hub: String
     }
 
     input CreateTransaction {

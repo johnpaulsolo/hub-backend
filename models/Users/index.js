@@ -43,6 +43,9 @@ const UsersSchema = new Schema({
     },
     Decals: {
         type: String
+    },
+    Hub: {
+        type: String
     }
 });
 
