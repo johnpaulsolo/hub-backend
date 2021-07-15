@@ -39,7 +39,7 @@ module.exports = buildSchema(`
         DropLong: Float!
         PickLat: Float!
         PickLong: Float!
-        HubLocated: String!
+        HubLocated: String
         Notes: String!
         Status: String
         Rate: String
@@ -75,7 +75,6 @@ module.exports = buildSchema(`
         DropLong: Float!
         PickLat: Float!
         PickLong: Float!
-        HubLocated: String!
         Notes: String!
         Status: String!
     }
@@ -106,7 +105,7 @@ module.exports = buildSchema(`
         CreateAccount(newAccount: CreateAccount): Users
         CreateTransaction(newTransaction: CreateTransaction): Transaction
         CreateHub(Hub: String): Hubs
-        EditStatus(account: String, status: String, rider: String): Transaction
+        EditStatus(account: String, status: String, rider: String, hub: String): Transaction
         SendDecals(newDecal: CreateDecalUpdate): Decals
     }
 

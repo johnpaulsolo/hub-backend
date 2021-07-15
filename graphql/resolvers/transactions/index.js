@@ -12,7 +12,6 @@ module.exports={
             DropLong,
             PickLat,
             PickLong,
-            HubLocated,
             Notes,
             Status
         } = args.newTransaction
@@ -25,7 +24,6 @@ module.exports={
             DropLong: DropLong,
             PickLat: PickLat,
             PickLong: PickLong,
-            HubLocated: HubLocated,
             Notes: Notes,
             Status: Status
         });
@@ -153,7 +151,8 @@ module.exports={
                 if (result._doc.Driver == null || result._doc.Driver == args.rider) {
                     return Transaction.findByIdAndUpdate(args.account, {
                             Status: args.status,
-                            Driver: args.rider
+                            Driver: args.rider,
+                            HubLocated: args.hub
                         })
                         .then(data => {
                             return {
