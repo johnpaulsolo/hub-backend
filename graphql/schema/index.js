@@ -18,6 +18,11 @@ module.exports = buildSchema(`
         Hub: String
     }
 
+    type Hubs {
+        _id: ID!
+        Hub: String!
+    }
+
     type AuthData {
         userId: ID!
         userType: String!
@@ -93,12 +98,14 @@ module.exports = buildSchema(`
         UserAcceptedTransactions(User: String): Transaction
         Searching(TripId: String): Transaction
         Profile(userId: String): Users
+        AllHubs: [Hubs!]!
         AllDecals: [Decals!]!
     }
     
     type AllMutations {
         CreateAccount(newAccount: CreateAccount): Users
         CreateTransaction(newTransaction: CreateTransaction): Transaction
+        CreateHub(Hub: String): Hubs
         EditStatus(account: String, status: String, rider: String): Transaction
         SendDecals(newDecal: CreateDecalUpdate): Decals
     }
