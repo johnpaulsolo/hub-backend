@@ -89,7 +89,7 @@ module.exports = buildSchema(`
 
     type AllQueries {
         login(Username: String, Password: String): AuthData!
-        Transaction(Hub: String): Transaction
+        TransactionsByHub(Hub: String): [Transaction!]!
         DriverTrip(userId: String): Transaction
         AllTransactions: [Transaction!]!
         RequestTransactions: [Transaction!]!

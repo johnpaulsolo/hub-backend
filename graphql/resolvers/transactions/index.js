@@ -68,14 +68,17 @@ module.exports={
                 throw err;
             });
     },
-    Transaction: (args) => {
+    TransactionsByHub: (args) => {
 
         return Transaction.findById(args.Hub)
             .then(result => {
-                return {
-                    ...result._doc,
-                    Driver: userRelation.bind(this, ...result._doc.Driver)
-                }
+                return result.map(Data => {
+                    return {
+                        ...Data._doc,
+                        UserId: userRelation.bind(this, Data._doc.UserId),
+                        Driver: userRelation.bind(this, Data._doc.Driver)
+                    }
+                })
             }).catch(err => {
                 throw err;
             });
