@@ -44,6 +44,7 @@ module.exports = buildSchema(`
         Status: String
         Rate: String
         Driver: Users
+        Date: String
     }
 
     type Decals {

@@ -40,6 +40,9 @@ const TransactionSchema = new Schema({
     Driver: {
         type: Schema.Types.ObjectId,
         ref: 'Users',
+    },
+    Date: {
+        type: String
     }
 })
 

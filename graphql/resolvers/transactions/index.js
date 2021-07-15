@@ -4,6 +4,17 @@ const { userRelation } = require('../merge/index');
 module.exports={
     CreateTransaction: (args) => {
 
+        // current timestamp in milliseconds
+        let ts = Date.now();
+
+        let date_ob = new Date(ts);
+        let date = date_ob.getDate();
+        let month = date_ob.getMonth() + 1;
+        let year = date_ob.getFullYear();
+
+        // prints date & time in YYYY-MM-DD format
+        let dateCreated = year + "-" + month + "-" + date;
+
         const {
             UserId,
             DropAddress,
@@ -25,7 +36,8 @@ module.exports={
             PickLat: PickLat,
             PickLong: PickLong,
             Notes: Notes,
-            Status: Status
+            Status: Status,
+            Date: dateCreated
         });
 
         return newTransaction
