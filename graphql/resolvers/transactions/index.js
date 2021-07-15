@@ -70,7 +70,7 @@ module.exports={
     },
     TransactionsByHub: (args) => {
 
-        return Transaction.findById(args.Hub)
+        return Transaction.find(args.Hub)
             .then(result => {
                 return result.map(Data => {
                     return {
