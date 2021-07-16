@@ -10,7 +10,8 @@ const UsersSchema = new Schema({
     },
     Email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     FName: {
         type: String,
@@ -33,13 +34,15 @@ const UsersSchema = new Schema({
     },
     Phone: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     Vehicle: {
         type: String
     },
     PlateNo: {
-        type: String
+        type: String,
+        unique: true
     },
     Decals: {
         type: String
