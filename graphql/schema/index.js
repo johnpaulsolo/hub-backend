@@ -100,6 +100,7 @@ module.exports = buildSchema(`
         Profile(userId: String): Users
         AllHubs: [Hubs!]!
         AllDecals: [Decals!]!
+        AllRiders: [Users!]!
     }
     
     type AllMutations {

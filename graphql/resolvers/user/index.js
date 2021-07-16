@@ -50,5 +50,17 @@ module.exports={
             }).catch(err => {
                 throw err;
             });
+    },
+    AllRiders: () => {
+        return User.find()
+            .then(result => {
+                return result.map(Data => {
+                    return {
+                        ...Data._doc
+                    }
+                })
+            }).catch(err => {
+                throw err;
+            });
     }
 }
