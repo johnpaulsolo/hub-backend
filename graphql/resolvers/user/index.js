@@ -52,7 +52,7 @@ module.exports={
             });
     },
     AllRiders: () => {
-        return User.find()
+        return User.find({ UserType: 'rider' })
             .then(result => {
                 return result.map(Data => {
                     return {
