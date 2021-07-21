@@ -45,7 +45,7 @@ module.exports = buildSchema(`
         Rate: String
         Driver: Users
         Date: String
-        Price: Number
+        Price: Float
     }
 
     type Decals {
@@ -79,7 +79,7 @@ module.exports = buildSchema(`
         PickLong: Float!
         Notes: String!
         Status: String!
-        Price: Number!
+        Price: Float!
     }
 
     input CreateDecalUpdate {
