@@ -24,7 +24,8 @@ module.exports={
             PickLat,
             PickLong,
             Notes,
-            Status
+            Status,
+            Price
         } = args.newTransaction
 
         const newTransaction = new Transaction({
@@ -37,7 +38,8 @@ module.exports={
             PickLong: PickLong,
             Notes: Notes,
             Status: Status,
-            Date: dateCreated
+            Date: dateCreated,
+            Price: Price
         });
 
         return newTransaction

@@ -43,6 +43,9 @@ const TransactionSchema = new Schema({
     },
     Date: {
         type: String
+    },
+    Price: {
+        type: Number
     }
 })
 
