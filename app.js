@@ -25,7 +25,7 @@ app.use(isAuth);
 app.use('/api', graphHttp({
     schema: indexSchema,
     rootValue: indexResolvers,
-    graphiql: false
+    graphiql: true
 }));
 
 mongoose.connect(`
